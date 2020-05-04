@@ -1,3 +1,5 @@
+require("chartkick")
+require("chart.js")
 
 import React from 'react'
 import { render } from 'react-dom'
