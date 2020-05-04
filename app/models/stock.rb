@@ -1,3 +1,3 @@
-class ApplicationRecord < ApplicationRecord
+class Stock < ApplicationRecord
   validates :symbol, :price, presence: true
 end
