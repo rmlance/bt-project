@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react'
 
 const DataTile = props => {
 
-  let currentPrice = props.price[props.price.length-1]
+let currentPrice;
+
+  if (props.price.length) {
+    currentPrice = props.price[props.price.length-1]
+    currentPrice.toFixed(2)
+  }
 
   return (
     <div>

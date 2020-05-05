@@ -40,7 +40,7 @@ const StocksIndexContainer = props => {
             data={priceData}
           />
         </div>
-        <div className="cell medium-6">
+        <div className="cell medium-5">
           <DataTile
             price={priceData}
           />
