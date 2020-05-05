@@ -49,7 +49,7 @@ const ChartTile = props => {
   }, [props.data])
 
   return (
-    <div className="cell medium-6">
+    <div className="">
       <div className="">
         <canvas
           id="myChart"

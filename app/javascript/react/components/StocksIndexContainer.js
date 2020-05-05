@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Component } from 'react'
 import ChartTile from './ChartTile'
+import DataTile from './DataTile'
 
 const StocksIndexContainer = props => {
   const [priceData, setPriceData] = useState([])
@@ -31,13 +32,19 @@ const StocksIndexContainer = props => {
 
   return(
     <div className="grid-container">
-    <h5>Stock Dashboard</h5>
+      <h5>Stock Dashboard</h5>
       <div className="grid-x">
-        <ChartTile
-          labels={timeData}
-          data={priceData}
-        />
-        <h3>Data renders here:</h3>
+        <div className="cell medium-6">
+          <ChartTile
+            labels={timeData}
+            data={priceData}
+          />
+        </div>
+        <div className="cell medium-6">
+          <DataTile
+            price={priceData}
+          />
+        </div>
       </div>
     </div>
   )
