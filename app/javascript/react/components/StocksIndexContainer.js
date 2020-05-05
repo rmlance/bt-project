@@ -1,11 +1,9 @@
 import React, { useState, useEffect, Component } from 'react'
-import classes from "./LineGraph.module.css";
 import ChartTile from './ChartTile'
-import LineChart from './LineChart'
 
 const StocksIndexContainer = props => {
-  const [priceData, setPriceData] = useState([1])
-  const [timeData, setTimeData] = useState([1])
+  const [priceData, setPriceData] = useState([])
+  const [timeData, setTimeData] = useState([])
 
   const socket = new WebSocket('wss://ws.finnhub.io?token=bqjd6h7rh5r89luqup70');
 
@@ -20,10 +18,9 @@ const StocksIndexContainer = props => {
     let newDataPoint = JSON.parse(event.data)
     if (newDataPoint.type == "trade") {
       let newPricePoint = newDataPoint.data[0].p
-      let newTimePoint = newDataPoint.data[0].t
+      let newTimePoint = new Date(newDataPoint.data[0].t).toLocaleString()
       setPriceData([...priceData, newPricePoint])
       setTimeData([...timeData, newTimePoint])
-      debugger
     }
   });
 
@@ -33,12 +30,15 @@ const StocksIndexContainer = props => {
   }
 
   return(
-    <div className={classes.container}>
-      <h5>Stock Dashboard</h5>
-      <LineChart
-        labels={timeData}
-        data={priceData}
-      />
+    <div className="grid-container">
+    <h5>Stock Dashboard</h5>
+      <div className="grid-x">
+        <ChartTile
+          labels={timeData}
+          data={priceData}
+        />
+        <h3>Data renders here:</h3>
+      </div>
     </div>
   )
 }

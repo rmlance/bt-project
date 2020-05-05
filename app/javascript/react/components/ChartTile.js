@@ -1,45 +1,63 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import Chart from "chart.js";
 
-
 const ChartTile = props => {
-
   let chartRef = React.createRef();
-  // const myChartRef = this.chartRef.current.getContext("2d");
 
-  // new Chart(myChartRef, {
-  //     type: "line",
-  //     data: {
-  //         //Bring in data
-  //         labels: ["Time1", "Time2", "Time3"],
-  //         datasets: [
-  //             {label: "Apple", data: [199.24, 255.2, 223.34]}
-  //         ]
-  //     },
-  //     options: {
-  //         //Customize chart options
-  //     }
-  // });
+  useEffect(() => {
+    const myChartRef = chartRef.current.getContext("2d");
 
-  if (!props) {
-    return (
-      <div>
+    new Chart(myChartRef, {
+      type: "line",
+      data: {
+        labels: props.labels,
+        datasets: [
+          {
+            label: "Apple",
+            fill: false,
+            lineTension: 0,
+            backgroundColor: 'rgb(51, 153, 51)',
+            borderColor: 'rgb(51, 153, 51)',
+            data: props.data
+        }
+        ]
+      },
+      options: {
+        responsive: true,
+        animation: false,
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              ticks: {
+                autoSkip: true,
+                maxTicksLimit: 5
+              }
+            }
+          ],
+          yAxes: [
+            {
+              ticks: {
+                autoSkip: true,
+                maxTicksLimit: 5
+              }
+            }
+          ]
+        }
+      }
+    });
+  }, [props.data])
+
+  return (
+    <div className="cell medium-6">
+      <div className="">
         <canvas
           id="myChart"
-          ref={this.chartRef}
+          ref={chartRef}
         />
       </div>
-    )
-  }else {
-    return (
-      <div className="grid-container">
-      <canvas
-      id="myChart"
-      ref={this.chartRef}
-      />
-      </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default ChartTile
