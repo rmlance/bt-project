@@ -10,14 +10,12 @@ export default class LineGraph extends Component {
     new Chart(myChartRef, {
       type: "line",
       data: {
-        //Bring in data
-        labels: ["Time1", "Time2", "Time3"],
+        labels: [1, 2, 3],
         datasets: [
-          {label: "Apple", data: [199.24, 255.2, 223.34]}
+          {label: ["Apple"], data: [1, 2, 3]}
         ]
       },
       options: {
-          //Customize chart options
       }
     });
   }
@@ -25,9 +23,15 @@ export default class LineGraph extends Component {
   render() {
     return (
       <div>
+        <div>
+          <p>{this.props.labels}</p>
+          <p>{this.props.data}</p>
+        </div>
         <canvas
           id="myChart"
           ref={this.chartRef}
+          width="400"
+          height="100"
         />
       </div>
     )
