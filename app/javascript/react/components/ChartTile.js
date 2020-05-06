@@ -26,12 +26,13 @@ const ChartTile = props => {
         responsive: true,
         animation: false,
         maintainAspectRatio: false,
+        events: false,
         scales: {
           xAxes: [
             {
               ticks: {
                 autoSkip: true,
-                maxTicksLimit: 5
+                maxTicksLimit: 3
               }
             }
           ],
@@ -39,14 +40,14 @@ const ChartTile = props => {
             {
               ticks: {
                 autoSkip: true,
-                maxTicksLimit: 5
+                maxTicksLimit: 3
               }
             }
           ]
         }
       }
     });
-  }, [props.data])
+  }, [props])
 
   return (
     <div className="">

@@ -6,7 +6,8 @@ let currentPrice;
 
   if (props.price.length) {
     currentPrice = props.price[props.price.length-1]
-    currentPrice.toFixed(2)
+    currentPrice = currentPrice.toFixed(2)
+
   }
 
   return (
