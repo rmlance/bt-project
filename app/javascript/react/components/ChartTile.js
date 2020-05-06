@@ -17,36 +17,44 @@ labelsArray.shift()
 
 
   const chartData = {
-  labels: labelsArray,
-  datasets: [
-    {
-      label: title,
-      fill: false,
-      lineTension: 0,
-      backgroundColor: 'rgba(75,192,192,1)',
-      borderColor: 'rgba(0,0,0,1)',
-      borderWidth: 2,
-      data: priceArray
-    }
-  ]
-}
+    labels: labelsArray,
+    datasets: [
+      {
+        fill: false,
+        lineTension: 0,
+        backgroundColor: 'rgba(0,0,0,1)',
+        borderColor: 'rgba(0,0,0,1)',
+        borderWidth: 2,
+        data: priceArray
+      }
+    ]
+  }
+  const chartOptions = {
+    title:{
+      display:true,
+      text:title,
+      fontSize:20
+    },
+    legend:false,
+    animation: false,
+    // scales: {
+    //   yAxes: [{
+    //     ticks: {
+    //       fontSize: 16,
+    //       maxRotation: 0,
+    //       padding: 10,
+    //       labelOffset:10
+    //     }
+    //   }]
+    // }
+  }
 
   return (
     <div className="">
       <div>
       <Line
         data={chartData}
-        options={{
-          title:{
-            display:true,
-            text:'APPL',
-            fontSize:20
-          },
-          legend:{
-            display:true,
-            position:'right'
-          }
-        }}
+        options={chartOptions}
       />
       </div>
     </div>

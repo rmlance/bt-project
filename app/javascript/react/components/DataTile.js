@@ -4,8 +4,8 @@ const DataTile = props => {
 let currentPrice;
 
   if (props.data.length > 1) {
-    currentPrice = props.data[1].p
-    currentPrice.toFixed(2)
+    currentPrice = props.data[props.data.length - 1].p
+    currentPrice = currentPrice.toFixed(2)
   }
 
   return (

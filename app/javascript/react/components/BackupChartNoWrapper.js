@@ -61,27 +61,3 @@ const BackupChartNoWrapper = props => {
 }
 
 export default BackupChartNoWrapper
-
-// useEffect(()=> {
-//   fetch('/api/v1/stocks', {
-//     credentials: "same-origin"
-//   })
-//   .then(response => {
-//     if(response.ok) {
-//       return response
-//     } else {
-//       let errorMessage = `${response.status} (${response.statusText})`
-//       error = new Error(errorMessage)
-//       throw(error)
-//     }
-//   })
-//   .then(response => response.json())
-//   .then(parsedStockData => {
-//     parsedStockData.stocks[0].records.forEach((record) => {
-//       let newPricePoint = parseFloat(record.pice)
-//       setPriceData([...priceData, newPricePoint])
-//     })
-//     setTimeData(parsedStockData)
-//   })
-//   .catch(error => console.error(`Error in fetch: ${errorMessage}`))
-// }, [])
