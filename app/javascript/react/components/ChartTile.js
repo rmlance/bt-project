@@ -1,60 +1,53 @@
 import React, { useState, useEffect } from 'react'
-import Chart from "chart.js";
+import { Line } from 'react-chartjs-2'
 
 const ChartTile = props => {
-  let chartRef = React.createRef();
+let title;
+let priceArray = []
+let labelsArray = []
+props.data.map((newPoint) => {
+  title = newPoint.s
+  priceArray.push(newPoint.p)
+  let newTimePoint = new Date(newPoint.t).toLocaleString()
+  labelsArray.push(newTimePoint)
+})
 
-  useEffect(() => {
-    const myChartRef = chartRef.current.getContext("2d");
+priceArray.shift()
+labelsArray.shift()
 
-    new Chart(myChartRef, {
-      type: "line",
-      data: {
-        labels: props.labels,
-        datasets: [
-          {
-            label: "Apple",
-            fill: false,
-            lineTension: 0,
-            backgroundColor: 'rgb(51, 153, 51)',
-            borderColor: 'rgb(51, 153, 51)',
-            data: props.data
-        }
-        ]
-      },
-      options: {
-        responsive: true,
-        animation: false,
-        maintainAspectRatio: false,
-        scales: {
-          xAxes: [
-            {
-              ticks: {
-                autoSkip: true,
-                maxTicksLimit: 5
-              }
-            }
-          ],
-          yAxes: [
-            {
-              ticks: {
-                autoSkip: true,
-                maxTicksLimit: 5
-              }
-            }
-          ]
-        }
-      }
-    });
-  }, [props.data])
+
+  const chartData = {
+  labels: labelsArray,
+  datasets: [
+    {
+      label: title,
+      fill: false,
+      lineTension: 0,
+      backgroundColor: 'rgba(75,192,192,1)',
+      borderColor: 'rgba(0,0,0,1)',
+      borderWidth: 2,
+      data: priceArray
+    }
+  ]
+}
 
   return (
     <div className="">
-      <div className="">
-        <canvas
-          id="myChart"
-          ref={chartRef}
-        />
+      <div>
+      <Line
+        data={chartData}
+        options={{
+          title:{
+            display:true,
+            text:'APPL',
+            fontSize:20
+          },
+          legend:{
+            display:true,
+            position:'right'
+          }
+        }}
+      />
       </div>
     </div>
   )
