@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2020_05_06_130216) do
   enable_extension "plpgsql"
 
   create_table "records", force: :cascade do |t|
-    t.decimal "price", precision: 8, scale: 4, null: false
-    t.string "time", null: false
+    t.decimal "p", precision: 8, scale: 4, null: false
+    t.string "t", null: false
     t.bigint "stock_id"
     t.index ["stock_id"], name: "index_records_on_stock_id"
   end
