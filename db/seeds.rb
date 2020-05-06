@@ -1,3 +1,7 @@
-apple1 = Stock.create(symbol: "APPL", price: 285.11)
-apple2 = Stock.create(symbol: "APPL", price: 287.05)
-apple3 = Stock.create(symbol: "APPL", price: 284.25)
+apple = Stock.create(symbol: "APPL")
+
+record1 = Record.create(p: 255.68, t: "5/6/2020, 8:58:48 AM", stock: apple)
+record2 = Record.create(p: 255.75, t: "5/6/2020, 8:59:02 AM", stock: apple)
+record3 = Record.create(p: 255.33, t: "5/6/2020, 8:59:18 AM", stock: apple)
+record4 = Record.create(p: 256.12, t: "5/6/2020, 8:59:30 AM", stock: apple)
+record5 = Record.create(p: 255.55, t: "5/6/2020, 8:59:42 AM", stock: apple)

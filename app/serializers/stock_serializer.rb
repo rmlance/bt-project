@@ -1,3 +1,5 @@
 class StockSerializer < ActiveModel::Serializer
-  attributes :created_at, :price
+  attributes :symbol
+
+  has_many :records
 end

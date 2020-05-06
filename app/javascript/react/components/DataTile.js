@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
 const DataTile = props => {
-
 let currentPrice;
 
-  if (props.price.length) {
-    currentPrice = props.price[props.price.length-1]
-    currentPrice = currentPrice.toFixed(2)
-
+  if (props.data.length > 1) {
+    currentPrice = props.data[props.data.length - 1].p
   }
 
   return (

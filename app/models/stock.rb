@@ -1,3 +1,5 @@
 class Stock < ApplicationRecord
-  validates :symbol, :price, presence: true
+  validates :symbol, presence: true
+
+  has_many :records
 end
