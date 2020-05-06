@@ -15,7 +15,6 @@ props.data.map((newPoint) => {
 priceArray.shift()
 labelsArray.shift()
 
-
   const chartData = {
     labels: labelsArray,
     datasets: [
