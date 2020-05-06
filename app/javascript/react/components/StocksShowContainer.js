@@ -9,9 +9,12 @@ const StocksShowContainer = props => {
         "t":""
       }
   ])
+  const [tickerSymbol, setTickerSymbol] = useState({})
+
+  const fetchId = props.match.params.id
 
   useEffect(()=> {
-    fetch('/api/v1/stocks', {
+    fetch(`/api/v1/stocks/${fetchId}`, {
       credentials: "same-origin"
     })
     .then(response => {
@@ -25,16 +28,16 @@ const StocksShowContainer = props => {
     })
     .then(response => response.json())
     .then(parsedStockData => {
-      setStockData(parsedStockData.stocks[0].records)
+      setStockData(parsedStockData.stock.records)
+      setTickerSymbol(parsedStockData.stock.symbol)
     })
     .catch(error => console.error(`Error in fetch: ${errorMessage}`))
   }, [])
 
-
   const socket = new WebSocket('wss://ws.finnhub.io?token=bqjd6h7rh5r89luqup70');
 
   socket.addEventListener('open', function (event) {
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
+    socket.send(JSON.stringify({'type':'subscribe', 'symbol': tickerSymbol}))
   });
 
   socket.addEventListener('message', function (event) {

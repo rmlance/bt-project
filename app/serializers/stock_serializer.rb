@@ -1,5 +1,5 @@
 class StockSerializer < ActiveModel::Serializer
-  attributes :symbol
+  attributes :id, :symbol
 
   has_many :records
 end
