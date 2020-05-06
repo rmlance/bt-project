@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import StocksIndexContainer from './StocksIndexContainer'
+import StocksShowContainer from './StocksShowContainer'
 
 export const App = (props) => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path='/' component={StocksIndexContainer}></Route>
-        <Route exact path='/dashboard' component={StocksIndexContainer}></Route>
+        <Route exact path='/' component={StocksShowContainer}></Route>
+        <Route exact path='/dashboard' component={StocksShowContainer}></Route>
       </Switch>
     </BrowserRouter>
   )

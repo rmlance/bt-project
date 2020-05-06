@@ -2,7 +2,7 @@ import React, { useState, useEffect, Component } from 'react'
 import ChartTile from './ChartTile'
 import DataTile from './DataTile'
 
-const StocksIndexContainer = props => {
+const StocksShowContainer = props => {
   const [stockData, setStockData] = useState([
       {
         "p":"",
@@ -71,4 +71,4 @@ const StocksIndexContainer = props => {
   )
 }
 
-export default StocksIndexContainer;
+export default StocksShowContainer;
