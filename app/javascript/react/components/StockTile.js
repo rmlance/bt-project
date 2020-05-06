@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const StockTile = props => {
-console.log(props.stock);
+
   return(
     <div className="cell">
       <h3>

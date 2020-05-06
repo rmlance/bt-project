@@ -61,7 +61,6 @@ const StocksShowContainer = props => {
         <div className="cell medium-6">
           <ChartTile
             data={stockData}
-            // labels={labelsArray}
           />
         </div>
         <div className="cell medium-5">

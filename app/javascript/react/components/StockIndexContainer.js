@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import StockTile from './StockTile'
 
 const StockIndexContainer = props => {
@@ -37,6 +38,9 @@ const StockIndexContainer = props => {
   return(
     <div className="grid-container">
       {stockList}
+      <div>
+        <Link to="/stocks/new">Track a new Stock!</Link>
+      </div>
     </div>
   )
 }
