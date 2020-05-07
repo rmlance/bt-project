@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :stocks, only: [:index, :show, :create, :destroy]
+      resources :stocks, only: [:index, :show, :create, :destroy] do
+        resources :records, only: [:create]
+      end
     end
   end
 
