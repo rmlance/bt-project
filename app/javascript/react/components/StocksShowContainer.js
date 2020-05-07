@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Component } from 'react'
 import ChartTile from './ChartTile'
 import DataTile from './DataTile'
+import TradeForm from './TradeForm'
 
 const StocksShowContainer = props => {
   const [stockData, setStockData] = useState([
@@ -10,6 +11,7 @@ const StocksShowContainer = props => {
       }
   ])
   const [tickerSymbol, setTickerSymbol] = useState({})
+  const [newTrade, setNewTrade] = useState({})
 
   const fetchId = props.match.params.id
 
@@ -54,6 +56,37 @@ const StocksShowContainer = props => {
     socket.send(JSON.stringify({'type':'unsubscribe','symbol': symbol}))
   }
 
+
+  const submitTrade = (formPayload) => {
+    debugger
+    formPayload.p = stockData[stockData.length-1].p
+    formPayload.t = stockData[stockData.length-1].t
+    fetch(`/api/v1/stocks/${fetchId}/records`, {
+      credentials: "same-origin",
+      method: 'POST',
+      body: JSON.stringify(formPayload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+      if(response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error)
+      }
+    })
+    // .then(response => response.json())
+    // .then(parsedNewStock => {
+    //   let stock = parsedNewStock.stock
+    //   setNewTrade(stock)
+    // })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
   return(
     <div className="grid-container">
       <h5>Stock Dashboard</h5>
@@ -66,6 +99,13 @@ const StocksShowContainer = props => {
         <div className="cell medium-5">
           <DataTile
             data={stockData}
+          />
+        </div>
+      </div>
+      <div className="grid-x">
+        <div className="cell medium-6">
+          <TradeForm
+            submitTrade={submitTrade}
           />
         </div>
       </div>

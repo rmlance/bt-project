@@ -10,7 +10,10 @@ let currentPrice = "Establishing network connection..."
   return (
     <div>
       Current Price:
-      <h1>$ {currentPrice}</h1>
+      <p>$ {currentPrice}</p>
+      <div className="callout">
+        More data coming here soon...
+      </div>
     </div>
   )
 }

@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 2020_05_06_130216) do
   create_table "records", force: :cascade do |t|
     t.decimal "p", precision: 8, scale: 4, null: false
     t.string "t", null: false
+    t.integer "quantity", default: 0, null: false
+    t.string "format", null: false
+    t.decimal "transaction_value", precision: 8, scale: 4
+    t.decimal "return_value", precision: 8, scale: 4
+    t.decimal "capital", precision: 8, scale: 4, null: false
     t.bigint "stock_id"
     t.index ["stock_id"], name: "index_records_on_stock_id"
   end
