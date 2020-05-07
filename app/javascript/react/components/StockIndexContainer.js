@@ -36,9 +36,7 @@ const StockIndexContainer = props => {
 
   return(
     <div className="grid-container">
-      <div className="">
         {stockList}
-      </div>
     </div>
   )
 }
