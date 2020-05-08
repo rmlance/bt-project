@@ -7,7 +7,8 @@ import ErrorList from "./ErrorList"
 const NewStockForm = props => {
   const [errors, setErrors] = useState({})
   const [newFormPayload, setNewFormPayload] = useState({
-    symbol: ""
+    symbol: "",
+    starting_capital: ""
   })
 
   const handleInputChange = event => {
@@ -19,7 +20,7 @@ const NewStockForm = props => {
 
   const validForSubmission = () => {
     let submitErrors = {}
-    const requiredFields = ["symbol"]
+    const requiredFields = ["symbol", "starting_capital"]
     requiredFields.forEach(field => {
       if (newFormPayload[field].trim() === "") {
         submitErrors = {
@@ -37,7 +38,8 @@ const NewStockForm = props => {
     if (validForSubmission()) {
       props.addNewStock(newFormPayload)
       setNewFormPayload({
-        symbol: ""
+        symbol: "",
+        starting_capital: ""
       })
       setErrors({})
     }
@@ -54,6 +56,17 @@ const NewStockForm = props => {
               <input
                 name="symbol"
                 id="symbol"
+                type="text"
+                onChange={handleInputChange}
+                value={newFormPayload.name}
+              />
+            </label>
+
+            <label className="starting_capital">
+              Enter Starting Capital:
+              <input
+                name="starting_capital"
+                id="starting_capital"
                 type="text"
                 onChange={handleInputChange}
                 value={newFormPayload.name}
