@@ -8,7 +8,6 @@ const NewStockContainer = props => {
   const [newStock, setNewStock] = useState({})
 
   const addNewStock = (formPayload) => {
-    debugger
     fetch('/api/v1/stocks', {
       credentials: "same-origin",
       method: 'POST',
