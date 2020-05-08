@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_130216) do
     t.string "format", null: false
     t.decimal "transaction_value", precision: 8, scale: 4
     t.decimal "return_value", precision: 8, scale: 4
-    t.decimal "capital", precision: 8, scale: 4, null: false
+    t.decimal "capital", precision: 12, scale: 4, null: false
     t.bigint "stock_id"
     t.index ["stock_id"], name: "index_records_on_stock_id"
   end

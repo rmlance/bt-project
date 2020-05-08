@@ -36,7 +36,8 @@ const StocksShowContainer = props => {
     .catch(error => console.error(`Error in fetch: ${errorMessage}`))
   }, [])
 
-  const socket = new WebSocket('wss://ws.finnhub.io?token=bqjd6h7rh5r89luqup70');
+  const apiKey = "bqqknmfrh5rcj5178tl0"
+  const socket = new WebSocket(`wss://ws.finnhub.io?token=bqqknmfrh5rcj5178tl0`);
 
   socket.addEventListener('open', function (event) {
     socket.send(JSON.stringify({'type':'subscribe', 'symbol': tickerSymbol}))
@@ -58,7 +59,6 @@ const StocksShowContainer = props => {
 
 
   const submitTrade = (formPayload) => {
-    debugger
     formPayload.p = stockData[stockData.length-1].p
     formPayload.t = stockData[stockData.length-1].t
     fetch(`/api/v1/stocks/${fetchId}/records`, {

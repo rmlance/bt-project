@@ -7,7 +7,7 @@ class CreateRecords < ActiveRecord::Migration[5.2]
       t.string :format, null: false
       t.decimal :transaction_value, precision: 8, scale: 4
       t.decimal :return_value, precision: 8, scale: 4
-      t.decimal :capital, precision: 8, scale: 4, null: false
+      t.decimal :capital, precision: 12, scale: 4, null: false
 
       t.belongs_to :stock
     end
