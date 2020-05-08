@@ -19,7 +19,7 @@ const DataTile = props => {
 // record-level:
     if (!_.isEmpty(props.staticData.records)) {
       let mostRecent = props.staticData.records[props.staticData.records.length - 1]
-      starting = props.staticData.records[0]
+      let starting = props.staticData.records[0]
       shares = mostRecent.quantity
       buyingPower = mostRecent.capital
       holdingValue = (mostRecent.quantity * props.liveData[props.liveData.length - 1].p).toFixed(2)
