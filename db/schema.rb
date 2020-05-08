@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_130216) do
 
   create_table "stocks", force: :cascade do |t|
     t.string "symbol", null: false
+    t.decimal "starting_capital", precision: 12, scale: 4, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

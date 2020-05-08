@@ -30,7 +30,7 @@ class Api::V1::StocksController < ApplicationController
   protected
 
   def stock_params
-    params.require(:stock).permit(:symbol)
+    params.require(:stock).permit(:symbol, :starting_capital)
   end
 
 end
