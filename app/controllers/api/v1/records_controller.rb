@@ -20,7 +20,6 @@ class Api::V1::RecordsController < ApplicationController
   def build_record(first, previous, current, stock)
     if previous == nil && current.format == "buy"
       current.capital = stock.starting_capital - (current.quantity * current.p)
-      current.capital = previous.capital - (current.quantity * current.p)
     else
       if current.format == "buy"
         current.capital = previous.capital - (current.quantity * current.p)
@@ -29,8 +28,10 @@ class Api::V1::RecordsController < ApplicationController
         if previous.quantity - current.quantity > 0
           current.return_value = current.quantity * current.p
           current.quantity = previous.quantity - current.quantity
-        elsif previous.buy - current.sell == 0
+          current.capital = previous.capital + current.return_value
+        elsif previous.quantity - current.quantity == 0
           current.return_value = current.quantity * current.p
+          current.capital = previous.capital + current.return_value
           current.quantity = previous.quantity - current.quantity
         end
       end

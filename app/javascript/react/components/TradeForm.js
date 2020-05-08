@@ -60,7 +60,7 @@ const NewStockForm = props => {
                 id="quantity"
                 type="text"
                 onChange={handleInputChange}
-                value={newFormPayload.name}
+                value={newFormPayload.quantity}
               />
             </label>
 
@@ -71,7 +71,7 @@ const NewStockForm = props => {
                 id="format"
                 type="text"
                 onChange={handleInputChange}
-                value={newFormPayload.name}
+                value={newFormPayload.format}
               />
             </label>
 

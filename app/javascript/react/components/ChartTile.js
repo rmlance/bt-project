@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
 
 const ChartTile = props => {
-let title;
+
+let title = props.staticData.symbol
 let priceArray = []
 let labelsArray = []
 props.data.map((newPoint) => {
-  title = newPoint.s
   priceArray.push(newPoint.p)
   let newTimePoint = new Date(newPoint.t).toLocaleString()
   labelsArray.push(newTimePoint)

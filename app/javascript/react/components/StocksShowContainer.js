@@ -12,6 +12,8 @@ const StocksShowContainer = props => {
   ])
   const [tickerSymbol, setTickerSymbol] = useState({})
   const [newTrade, setNewTrade] = useState({})
+  const [staticData, setStaticData] = useState({})
+  const [trigger, setTrigger] = useState(false)
 
   const fetchId = props.match.params.id
 
@@ -30,13 +32,14 @@ const StocksShowContainer = props => {
     })
     .then(response => response.json())
     .then(parsedStockData => {
+      setStaticData(parsedStockData.stock)
       setStockData(parsedStockData.stock.records)
       setTickerSymbol(parsedStockData.stock.symbol)
+      setTrigger(false)
     })
     .catch(error => console.error(`Error in fetch: ${errorMessage}`))
-  }, [])
+  }, [trigger])
 
-  const apiKey = "bqqknmfrh5rcj5178tl0"
   const socket = new WebSocket(`wss://ws.finnhub.io?token=bqqknmfrh5rcj5178tl0`);
 
   socket.addEventListener('open', function (event) {
@@ -79,11 +82,10 @@ const StocksShowContainer = props => {
         throw(error)
       }
     })
-    // .then(response => response.json())
-    // .then(parsedNewStock => {
-    //   let stock = parsedNewStock.stock
-    //   setNewTrade(stock)
-    // })
+      .then(response => response.json())
+      .then(parsedStockData => {
+        setTrigger(true)
+      })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
 
@@ -94,11 +96,13 @@ const StocksShowContainer = props => {
         <div className="cell medium-6">
           <ChartTile
             data={stockData}
+            staticData={staticData}
           />
         </div>
-        <div className="cell medium-5">
+        <div className="cell medium-6">
           <DataTile
-            data={stockData}
+            liveData={stockData}
+            staticData={staticData}
           />
         </div>
       </div>
