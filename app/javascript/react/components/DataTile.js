@@ -30,6 +30,7 @@ const DataTile = props => {
     }
 // live-data-level:
     if (props.liveData.length > 1) {
+      // this section: parseFloat is returning NaN even though IT REALLY IS... Fix this
       // let mostRecent = props.liveData[props.liveData.length - 1]
       // let starting = props.staticData.records[0]
       // price = props.liveData[props.liveData.length-1].p
@@ -37,6 +38,7 @@ const DataTile = props => {
       // capitalGrowth = ((parseFloat(props.liveData[props.liveData.length - 1].capital) - parseFloat(props.staticData.records[0].capital)) / parseFloat(props.staticData.records[0].capital) * 100).toFixed(3)
       // relativeReturn = ((parseFloat(capitalGrowth) - parseFloat(marketGrowth)) / parseFloat(marketGrowth)).toFixed(3)
     }
+
   }
 
 
