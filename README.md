@@ -1,5 +1,5 @@
 # README
-
+[![Codeship Status for rmlance/bt-project](https://app.codeship.com/projects/d4642f90-7531-0138-4fbf-0a880ae04a25/status?branch=master)](https://app.codeship.com/projects/395914)
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
