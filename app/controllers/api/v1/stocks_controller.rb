@@ -1,8 +1,11 @@
 class Api::V1::StocksController < ApplicationController
- skip_before_action :verify_authenticity_token
+ # skip_before_action :verify_authenticity_token
+ before_action :authorize_user
+ before_action :authenticate_user
 
   def index
-    render json: Stock.all
+    user_stocks = current_user.stocks.all
+    render json: user_stocks
   end
 
   def show
@@ -11,6 +14,7 @@ class Api::V1::StocksController < ApplicationController
 
   def create
     stock = Stock.new(stock_params)
+    stock.user_id = current_user.id
     if stock.save
       render json: { stock: stock }
     else
@@ -31,6 +35,18 @@ class Api::V1::StocksController < ApplicationController
 
   def stock_params
     params.require(:stock).permit(:symbol, :starting_capital)
+  end
+
+  def authenticate_user
+    if !user_signed_in?
+      render json: { error: "You do not have access to this page, please ensure you are signed in."}
+    end
+  end
+
+  def authorize_user
+    if !current_user
+      render json: { error: "You do not have access to this action."}
+    end
   end
 
 end

@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2020_05_06_130216) do
   enable_extension "plpgsql"
 
   create_table "records", force: :cascade do |t|
-    t.decimal "p", precision: 8, scale: 4, null: false
+    t.decimal "p", precision: 12, scale: 4, null: false
     t.string "t", null: false
     t.integer "quantity", default: 0, null: false
     t.string "format", null: false
-    t.decimal "transaction_value", precision: 8, scale: 4
-    t.decimal "return_value", precision: 8, scale: 4
+    t.decimal "transaction_value", precision: 12, scale: 4
+    t.decimal "return_value", precision: 12, scale: 4
     t.decimal "capital", precision: 12, scale: 4, null: false
     t.bigint "stock_id"
     t.index ["stock_id"], name: "index_records_on_stock_id"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2020_05_06_130216) do
     t.decimal "starting_capital", precision: 12, scale: 4, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
