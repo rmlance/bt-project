@@ -5,38 +5,44 @@ const DataTile = props => {
   let price = "Establishing network connection..."
   let startingCapital;
   let buyingPower;
-  let holdingValue;
+  let holdingValue = 0;
   let totalAssetValue;
   let shares = 0;
   let marketGrowth;
   let capitalGrowth;
   let relativeReturn;
+  let mostRecent;
+  let starting;
+  let mostRecentCapital;
 
 
-// stock-level:
   if (!_.isEmpty(props.staticData)) {
     startingCapital = props.staticData.starting_capital
-// record-level:
+    if (props.liveData.length > 1) {
+      price = props.liveData[props.liveData.length-1].p
+      buyingPower = startingCapital
+      totalAssetValue = (parseFloat(buyingPower) + parseFloat(holdingValue)).toFixed(2)
+    }
     if (!_.isEmpty(props.staticData.records)) {
-      let mostRecent = props.staticData.records[props.staticData.records.length - 1]
-      let starting = props.staticData.records[0]
+      mostRecent = props.staticData.records[props.staticData.records.length - 1]
+      starting = props.staticData.records[0]
       shares = mostRecent.quantity
-      buyingPower = mostRecent.capital
+      buyingPower = parseFloat(mostRecent.capital).toFixed(2)
       holdingValue = (mostRecent.quantity * props.liveData[props.liveData.length - 1].p).toFixed(2)
       totalAssetValue = (parseFloat(buyingPower) + parseFloat(holdingValue)).toFixed(2)
       marketGrowth = ((parseFloat(mostRecent.p) - parseFloat(starting.p)) / parseFloat(starting.p) * 100).toFixed(3)
-      capitalGrowth = ((parseFloat(mostRecent.capital) - parseFloat(starting.capital)) / parseFloat(starting.capital) * 100).toFixed(3)
-      relativeReturn = ((capitalGrowth - marketGrowth) / marketGrowth ).toFixed(3)
+      capitalGrowth = ((totalAssetValue - parseFloat(startingCapital)) / parseFloat(startingCapital) * 100).toFixed(3)
+      relativeReturn = (capitalGrowth - marketGrowth).toFixed(3)
+      price = props.liveData[props.liveData.length-1].p
     }
-// live-data-level:
-    if (props.liveData.length > 1) {
-      // this section: parseFloat is returning NaN even though IT REALLY IS... Fix this
-      // let mostRecent = props.liveData[props.liveData.length - 1]
-      // let starting = props.staticData.records[0]
-      // price = props.liveData[props.liveData.length-1].p
-      // marketGrowth = ((price - parseFloat(props.staticData.records[0].p)) / parseFloat(props.staticData.records[0].p) * 100).toFixed(3)
-      // capitalGrowth = ((parseFloat(props.liveData[props.liveData.length - 1].capital) - parseFloat(props.staticData.records[0].capital)) / parseFloat(props.staticData.records[0].capital) * 100).toFixed(3)
-      // relativeReturn = ((parseFloat(capitalGrowth) - parseFloat(marketGrowth)) / parseFloat(marketGrowth)).toFixed(3)
+    if (!_.isEmpty(props.staticData.records) && props.liveData.length > 1) {
+      mostRecent = props.liveData[props.liveData.length - 1]
+      starting = props.staticData.records[0]
+      mostRecentCapital = parseFloat(props.staticData.records[props.staticData.records.length - 1].capital)
+      price = parseFloat(mostRecent.p)
+      marketGrowth = ((price - parseFloat(starting.p)) / parseFloat(starting.p) * 100).toFixed(3)
+      capitalGrowth = ((totalAssetValue - parseFloat(startingCapital)) / parseFloat(startingCapital) * 100).toFixed(3)
+      relativeReturn = (parseFloat(capitalGrowth) - parseFloat(marketGrowth)).toFixed(3)
     }
 
   }

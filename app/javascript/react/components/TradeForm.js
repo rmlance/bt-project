@@ -10,7 +10,7 @@ const NewStockForm = props => {
     p: "",
     t: "",
     quantity: "",
-    format: ""
+    format: "buy"
   })
 
   const handleInputChange = event => {
@@ -41,7 +41,7 @@ const NewStockForm = props => {
       props.submitTrade(newFormPayload)
       setNewFormPayload({
         quantity: "",
-        format: ""
+        format: "buy"
       })
       setErrors({})
     }
@@ -64,16 +64,16 @@ const NewStockForm = props => {
               />
             </label>
 
-            <label className="format">
-              Select Buy or Sell
-              <input
-                name="format"
-                id="format"
-                type="text"
-                onChange={handleInputChange}
-                value={newFormPayload.format}
-              />
-            </label>
+            <select
+              name="format"
+              id="format"
+              type="text"
+              value={newFormPayload.format}
+              onChange={handleInputChange}
+            >
+              <option value="buy">Buy</option>
+              <option value="sell">Sell</option>
+            </select>
 
           <div className="button-group">
             <input className="button" type="submit" value="Subimt Trade" />
