@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@800&display=swap');
+.show-container {
+  margin: 10px 30px 40px 30px;
+  padding: 5% 0% 20% 0%;
+}
+
+.show-grid {
+  background-color: #363D46;
+  margin: 0px 5px 0px 5px;
+  padding: 20px 20px 20px 20px;
+  color: white;
+  border: solid 5px black;
+  border-radius: 5px;
+}
+.show-grid-2 {
+  background-color: #363D46;
+  margin: 20px 5px 0px 5px;
+  padding: 20px 20px 20px 20px;
+  color: white;
+  border: solid 5px black;
+  border-radius: 5px;
+}
+
+.stock-dashboard {
+  color: #E3F0FC;
+  text-decoration: underline;
+  font-family: 'Spectral', serif;
+  font-size: 36px;
+}
+
+.chart-tile {
+  color: white;
+  background-color: white;
+  padding-right: 10px;
+}
+
+.data-cell {
+  margin: 5px 5px 5px 5px;
+  border: solid 5px #43505C;
+  border-radius: 10px;
+  background-color: #506277;
+}
+
+.data-titles {
+  font-size: 12px;
+  margin: 0px 0px 0px 10px;
+}
+
+.price-data {
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.positive {
+  color: #36E8A7;
+}
+
+.negative {
+  color: #DF4577;
+}
+
+h3 {
+  margin-left: 10px;
+}

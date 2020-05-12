@@ -80,9 +80,6 @@ const NewStockForm = props => {
           </div>
           </form>
         </div>
-        <div className="">
-        <Link to="/">Back to Home</Link>
-        </div>
       </div>
     )
   }

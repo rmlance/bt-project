@@ -47,44 +47,57 @@ const DataTile = props => {
 
   }
 
+  let capitalGrowthData = "negative"
+  if (capitalGrowth > 0) {
+    capitalGrowthData = "positive"
+  }
+  let marketGrowthData = "negative"
+  if (marketGrowth > 0) {
+    marketGrowthData = "positive"
+  }
+  let relativeReturnData = "negative"
+  if (relativeReturn > 0) {
+    relativeReturnData = "positive"
+  }
+
 
   return (
     <div className="grid-x data-tile">
       <div className="cell medium-12 data-cell">
-        <p>Current Price:</p>
-        <h3>$ {price}</h3>
+        <p className="data-titles">Current Price:</p>
+        <h3 className="price-data">$ {price}</h3>
       </div>
-      <div className="cell medium-6 data-cell">
-        <p>Starting Capital:</p>
+      <div className="cell medium-5 data-cell">
+        <p className="data-titles">Starting Capital:</p>
         <h3>$ {startingCapital}</h3>
       </div>
-      <div className="cell medium-6 data-cell">
-        <p>Holding value:</p>
+      <div className="cell medium-5 data-cell">
+        <p className="data-titles">Holding value:</p>
         <h3>$ {holdingValue}</h3>
       </div>
-      <div className="cell medium-6 data-cell">
-        <p>Buying Power:</p>
+      <div className="cell medium-5 data-cell">
+        <p className="data-titles">Buying Power:</p>
         <h3>$ {buyingPower}</h3>
       </div>
-      <div className="cell medium-6 data-cell">
-        <p>Total Asset Value:</p>
+      <div className="cell medium-5 data-cell">
+        <p className="data-titles">Total Asset Value:</p>
         <h3>$ {totalAssetValue}</h3>
       </div>
-      <div className="cell medium-3 data-cell">
-        <p>Current Shares:</p>
+      <div className="cell medium-2 data-cell">
+        <p className="data-titles">Current Shares:</p>
         <h3>{shares}</h3>
       </div>
       <div className="cell medium-3 data-cell">
-        <p>Market Growth:</p>
-        <h4>{marketGrowth} %</h4>
+        <p className="data-titles">Market Growth:</p>
+        <h4 className={`${marketGrowthData}`}>{marketGrowth} %</h4>
       </div>
       <div className="cell medium-3 data-cell">
-        <p>Capital Growth:</p>
-        <h4>{capitalGrowth} %</h4>
+        <p className="data-titles">Capital Growth:</p>
+        <h4 className={`${capitalGrowthData}`}>{capitalGrowth} %</h4>
       </div>
       <div className="cell medium-3 data-cell">
-        <p>Relative Return:</p>
-        <h4>{relativeReturn} %</h4>
+        <p className="data-titles">Relative Return:</p>
+        <h4 className={`${relativeReturnData}`}>{relativeReturn} %</h4>
       </div>
     </div>
   )

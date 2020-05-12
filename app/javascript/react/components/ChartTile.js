@@ -54,6 +54,7 @@ labelsArray.shift()
       <Line
         data={chartData}
         options={chartOptions}
+        height={220}
       />
       </div>
     </div>

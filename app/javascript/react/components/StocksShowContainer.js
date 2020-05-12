@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Component } from 'react'
+import { Link } from 'react-router-dom'
 import ChartTile from './ChartTile'
 import DataTile from './DataTile'
 import TradeForm from './TradeForm'
@@ -90,10 +91,10 @@ const StocksShowContainer = props => {
   }
 
   return(
-    <div className="grid-container">
-      <h5>Stock Dashboard</h5>
-      <div className="grid-x">
-        <div className="cell medium-6">
+    <div className="grid-container show-container">
+      <h5 className="text-center stock-dashboard">Stock Dashboard</h5>
+      <div className="grid-x show-grid">
+        <div className="cell medium-6 chart-tile">
           <ChartTile
             data={stockData}
             staticData={staticData}
@@ -106,12 +107,17 @@ const StocksShowContainer = props => {
           />
         </div>
       </div>
-      <div className="grid-x">
+      <div className="grid-x show-grid-2">
+        <div className="cell medium-3">
+        </div>
         <div className="cell medium-6">
           <TradeForm
             submitTrade={submitTrade}
           />
         </div>
+      </div>
+      <div className="text-center">
+        <Link to="/">Back to Home</Link>
       </div>
     </div>
   )
