@@ -10,15 +10,12 @@ const StockTile = props => {
   }
 
   return(
-    <div className="grid-x callout">
+    <div className="grid-x callout index-callouts">
       <h3 className="stock-title">
-        <Link to={`/stocks/${props.stock.id}`} className="">{props.stock.symbol}</Link>
+        <Link to={`/stocks/${props.stock.id}`} className="stock-title">{props.stock.symbol}</Link>
       </h3>
-      <div className="cell medium-2">
+      <div className="cell medium-2 index-data-cell">
         Starting Capital: ${props.stock.starting_capital}
-      </div>
-      <div className="cell medium-2">
-        Another Statistic:
       </div>
         <button className="button alert index-button" onClick={handleDelete}>Delete</button>
     </div>
