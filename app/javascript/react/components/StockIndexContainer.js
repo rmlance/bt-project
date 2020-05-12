@@ -77,7 +77,9 @@ const StockIndexContainer = props => {
       </div>
       {stockList}
       <div className="track-new-stock text-center">
-        <Link to="/stocks/new">Track a new Stock!</Link>
+        <h5>
+          <Link to="/stocks/new">Track a new Stock!</Link>
+        </h5>
       </div>
     </div>
   )
