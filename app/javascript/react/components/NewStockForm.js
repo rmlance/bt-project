@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import _ from "lodash"
-import { Link } from 'react-router-dom'
 import ErrorList from "./ErrorList"
 
 
@@ -77,9 +76,6 @@ const NewStockForm = props => {
             <input className="button" type="submit" value="Track This Stock" />
           </div>
           </form>
-        </div>
-        <div className="">
-        <Link to="/">Back to Home</Link>
         </div>
       </div>
     )

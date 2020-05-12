@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 import NewStockForm from './NewStockForm'
 
 const NewStockContainer = props => {
@@ -40,8 +40,13 @@ const NewStockContainer = props => {
   }
 
   return (
-    <div>
-      <NewStockForm addNewStock={addNewStock} />
+    <div className="grid-container new-form-container">
+      <NewStockForm
+        addNewStock={addNewStock}
+      />
+      <div className="text-center">
+        <Link to="/">Back to Home</Link>
+      </div>
     </div>
   )
 }
