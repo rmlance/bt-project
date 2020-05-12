@@ -71,9 +71,12 @@ const StockIndexContainer = props => {
 
 
   return(
-    <div className="grid-container">
+    <div className="grid-container index-container">
+      <div className="my-portfolio">
+        <h3>My Portfolio:</h3>
+      </div>
       {stockList}
-      <div>
+      <div className="track-new-stock text-center">
         <Link to="/stocks/new">Track a new Stock!</Link>
       </div>
     </div>

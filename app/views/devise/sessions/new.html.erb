@@ -1,6 +1,6 @@
-<p class=text-center>Sign in to access your portfolio!</p>
-<div class="grid-container">
-  <div class="callout">
+<div class="grid-container user-container">
+  <p class="text-center status-message">Sign in to access your portfolio!</p>
+  <div class="callout user-callout">
     <h2>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

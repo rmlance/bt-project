@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@800&display=swap');
+html {
+  background-color: #151517;
+}
+
+body {
+  background-color: #232937;
+}
+
+.top-bar {
+  background-color: #363D46;
+}
+
 .grid-x {
-  background-color: #c9d4ca;
+  background-color: #363D46;
   margin: 0px 5px 0px 5px
 }
 
@@ -12,10 +25,28 @@
   margin: 0px 0px 0px 0px;
 }
 
-.callout {
-  margin: 10px 5% 5px 5%;
+.index-callouts {
+  margin: 25px 5% 5px 5%;
+  border: solid 1px #506277;
 }
 
-.stock-title {
-  width: 50%;
+.main-title {
+  color: #E3F0FC;
+  font-family: 'Spectral', serif;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: #36E8A7;
+}
+
+a:hover {
+  color: #31AE84;
+}
+
+a:active {
+  color: pink;
 }
