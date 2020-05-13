@@ -8,7 +8,7 @@ let priceArray = []
 let labelsArray = []
 props.data.map((newPoint) => {
   priceArray.push(newPoint.p)
-  let newTimePoint = new Date(newPoint.t).toLocaleString()
+  let newTimePoint = new Date(parseInt(newPoint.t)).toLocaleString()
   labelsArray.push(newTimePoint)
 })
 
