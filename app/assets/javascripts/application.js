@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require chartkick
 //= require Chart.bundle
-//= //= require foundation
+//= require foundation
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
