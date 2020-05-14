@@ -4,7 +4,7 @@ RSpec.describe Record, type: :model do
   let! (:user) { FactoryBot.create(:user) }
   let!(:stock) { Stock.create(symbol: "AAPL", starting_capital: 100, user_id: user.id) }
 
-  it "should allow the new user review to persist to the database if all required fields are filled correctly" do
+  it "should allow the new user record to persist to the database if all required fields are filled correctly" do
     good_record = Record.create(p: 1200, t: 123456789, quantity: 3, format: "buy", capital: 2400, stock: stock)
     expect(good_record).to be_valid
   end
