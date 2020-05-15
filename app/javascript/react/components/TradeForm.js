@@ -76,7 +76,7 @@ const NewStockForm = props => {
             </select>
 
           <div className="button-group">
-            <input className="button" type="submit" value="Subimt Trade" />
+            <input className="button submit-trade-button" type="submit" value="Submit Trade" />
           </div>
           </form>
         </div>

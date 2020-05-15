@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const StockTile = props => {
-// debugger
+
   const handleDelete = event => {
     event.preventDefault()
     props.delete(props.stock)

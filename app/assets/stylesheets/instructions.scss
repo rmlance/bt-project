@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@900&display=swap');
+
+.instruction-container {
+  position:relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.directions {
+  color: black;
+  background-color: white;
+  padding: 25px 0px 0px 0px;
+  border: solid #282828 3px;
+}
+.direction-titles {
+  color: black;
+  font-size: 12px;
+  margin: 5px 15px 5px 10px;
+}
+
+.dominate {
+  font-family: 'Yantramanav', sans-serif;
+  color: white;
+  font-size: min(5vw, 70px);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -290%);
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.text {
+  color: #DF4577;
+  font-size: min(2vw, 24px);
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -250%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+.text1 {
+  color: white;
+  font-size: min(1.8vw, 20px);
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -180%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+.dominate-block {
+  background-image: url('city.jpeg');
+  background-size: cover;
+  filter: blur(3px) brightness(40%);
+  padding: 20% 0% 20% 0%;
+  margin-bottom: 30px;
+}

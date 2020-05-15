@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import StockTile from './StockTile'
+import Instructions from './Instructions'
 
 const StockIndexContainer = props => {
   const [stocks, setStocks] = useState([])
@@ -69,17 +70,23 @@ const StockIndexContainer = props => {
     )
   })
 
+  let portfolioTitle = "My Portfolio"
+  let instructionsBlock;
+  if (stockList.length == 0) {
+    portfolioTitle = ""
+    instructionsBlock = <Instructions/>
+  }
+
 
   return(
     <div className="grid-container index-container">
       <div className="my-portfolio">
-        <h3>My Portfolio:</h3>
+        <h3>{portfolioTitle}</h3>
       </div>
+      {instructionsBlock}
       {stockList}
-      <div className="track-new-stock text-center">
-        <h5>
-          <Link to="/stocks/new">Track a new Stock!</Link>
-        </h5>
+      <div className="text-center button-bar">
+        <Link to="/stocks/new" className="button track-button">Track a new Stock!</Link>
       </div>
     </div>
   )

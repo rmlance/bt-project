@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@800&display=swap');
 .index-container {
-  margin: 10px 30px 40px 30px;
-  padding: 5% 0% 50% 0%;
+  position: relative;
+  padding: 0px 0px 45vh 0px;
+
+}
+
+.index-callouts {
   border: solid 1px #506277;
+  margin: 0px 50px 30px 50px;
 }
 
 .stock-title {
@@ -14,6 +19,24 @@
 .track-new-stock {
   padding: 20px 10px 20px 10px;
 }
+.track-button {
+  border-radius: 5px;
+  background-image: linear-gradient(#004d80, #001f33, #004d80);
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  border: solid #3FB9EA 1px;
+}
+.track-button:hover {
+  color: white;
+  background-color: #001f33;
+}
+.button-bar {
+  background-color: #363D46;
+  margin: 0px 50px 10px 50px;
+  padding: 15px 10px 0px 10px;
+  border: solid 1px #506277;
+}
 
 .index-data-cell {
   color: white;
@@ -22,8 +45,11 @@
 
 .my-portfolio {
   margin: 0% 5% 0% 5%;
-  padding: 0px 0px 30px 0px;
-  color: #E3F0FC;
-  text-decoration: underline;
+  padding: 30px 0px 30px 0px;
+  color: white;
   font-family: 'Spectral', serif;
+}
+
+.index-button {
+  border-radius: 3px;
 }
