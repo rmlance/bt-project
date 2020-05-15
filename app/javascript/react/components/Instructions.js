@@ -8,6 +8,7 @@ const Instructions = props => {
       </div>
         <h1 className="dominate">Dominate the market.</h1>
         <p className="text">Start building your portfolio now.</p>
+        <p className="text1">Click the button below:</p>
     </div>
   )
 }

@@ -110,13 +110,13 @@ const StocksShowContainer = props => {
       <div className="grid-x show-grid-2">
         <div className="cell medium-3 directions">
           <ol>
-            <li className="data-titles list">
+            <li className="direction-titles list">
               Start by entering the quantity of shares you'd like to purchase.
             </li>
-            <li className="data-titles list">
+            <li className="direction-titles list">
               Use the dropdown to select "Buy" or "Sell".
             </li>
-            <li className="data-titles list">
+            <li className="direction-titles list">
               Upon clicking "Submit Trade," your request will processed using
               the most recent price available.
             </li>

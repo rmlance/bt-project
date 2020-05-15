@@ -1,29 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@800&display=swap');
 .show-container {
-  margin: 10px 30px 40px 30px;
-  padding: 5% 0% 20% 0%;
+  padding: 0% 0% 20% 0%;
+  border: solid #282828 10px;
 }
 
 .show-grid {
-  background-color: #363D46;
-  margin: 0px 5px 0px 5px;
-  padding: 20px 20px 20px 20px;
+  background-image: linear-gradient(0deg, #282828, #36E8A7);
+  padding: 50px 50px 50px 50px;
   color: white;
-  border: solid 5px black;
-  border-radius: 5px;
 }
 .show-grid-2 {
-  background-color: #363D46;
-  margin: 20px 5px 0px 5px;
-  padding: 20px 20px 20px 20px;
+  padding: 50px 20px 50px 20px;
   color: white;
-  border: solid 5px black;
-  border-radius: 5px;
+  background-image: linear-gradient(-90deg, #99ffff, #596277);
 }
 
 .stock-dashboard {
-  color: #E3F0FC;
-  font-size: 36px;
+  color: white;
+  font-size: 46px;
+  font-weight: bold;
+  background-image: linear-gradient(0deg, #262943, #282828);
+  margin: 0px 0px 0px 0px;
+  padding: 20px 0px 20px 0px;
 }
 
 .chart-tile {
@@ -31,12 +29,16 @@
   background-color: white;
   padding-right: 10px;
 }
+.data-tile {
+  background-color: inherit;
+  margin-left: 20px;
+}
 
 .data-cell {
   margin: 5px 5px 5px 5px;
   border: solid 5px #43505C;
   border-radius: 10px;
-  background-color: #506277;
+  background-image: linear-gradient(0deg, #282828, #506277);
 }
 
 .data-titles {
@@ -47,15 +49,17 @@
 .price-data {
   font-size: 50px;
   font-weight: bold;
-  margin-left: 10px;
+  margin: 0px 10px 0px 10px;
 }
 
 .positive {
   color: #36E8A7;
+  margin: 0px 6px 0px 6px;
 }
 
 .negative {
   color: #DF4577;
+  margin: 0px 6px 0px 6px;
 }
 
 h3 {
@@ -66,6 +70,7 @@ h3 {
   border-radius: 3px;
   background-color: #36E8A7;
   color: black;
+  font-size: 16px;
 }
 .submit-trade-button:hover {
   background-color: #31AE84;
