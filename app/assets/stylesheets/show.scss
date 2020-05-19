@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 .show-container {
   padding: 0% 0% 20% 0%;
   border: solid #282828 10px;
@@ -75,4 +76,24 @@ h3 {
 .submit-trade-button:hover {
   background-color: #31AE84;
   color: black;
+}
+
+.market-hours {
+  font-size: 16px;
+  text-align: center;
+}
+.market-closed {
+  animation: blinker 2s linear infinite;
+  color: red;
+}
+
+.market-open {
+  animation: blinker 2s linear infinite;
+  color: #37E8A6;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.3;
+  }
 }
