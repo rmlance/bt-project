@@ -8,7 +8,7 @@ const MarketHours = props => {
   let marketOpen = "market-open"
   let announcement = "MARKET OPEN"
 
-  if (day < 0 && day > 6 && time <= 9.30 && time > 16.00) {
+  if (day > 5 || time <= 9.30 || time > 16.00) {
     marketOpen = "market-closed"
     announcement = "MARKET CLOSED"
   }
