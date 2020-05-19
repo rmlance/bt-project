@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import ChartTile from './ChartTile'
 import DataTile from './DataTile'
 import TradeForm from './TradeForm'
+import MarketHours from './MarketHours'
 
 const StocksShowContainer = props => {
   const [stockData, setStockData] = useState([
@@ -93,6 +94,7 @@ const StocksShowContainer = props => {
   return(
     <div className="grid-container show-container">
       <h5 className="text-center stock-dashboard">Stock Dashboard</h5>
+      <MarketHours/>
       <div className="grid-x show-grid">
         <div className="cell medium-6 chart-tile">
           <ChartTile
