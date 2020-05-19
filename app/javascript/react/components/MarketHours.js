@@ -7,8 +7,9 @@ const MarketHours = props => {
   let time = parseFloat(presentDate.getHours() + "." + presentDate.getMinutes())
   let marketOpen = "market-open"
   let announcement = "MARKET OPEN"
+  console.log(day);
 
-  if (day > 6 && time <= 9.30 && time > 16.00) {
+  if (time <= 9.30 || time > 16.00 || day > 5) {
     marketOpen = "market-closed"
     announcement = "MARKET CLOSED"
   }
