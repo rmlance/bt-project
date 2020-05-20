@@ -8,7 +8,6 @@ class Api::V1::RecordsController < ApplicationController
     if current_record.save
       render json: current_record
     else
-      flash[:notice] = "Your order could not be executed at this time."
       render json: { error: current_record.errors.full_messages }, status: :unprocessable_entity
     end
   end
