@@ -53,7 +53,6 @@ const StocksShowContainer = props => {
     let parsedData = JSON.parse(event.data)
     if (parsedData.type == "trade") {
       let newDataPoint = parsedData.data[0]
-      // let newTimePoint = new Date(newDataPoint.t).toLocaleString()
       setStockData([...stockData, newDataPoint])
     }
   });
@@ -127,6 +126,8 @@ const StocksShowContainer = props => {
         <div className="cell medium-6">
           <TradeForm
             submitTrade={submitTrade}
+            liveData={stockData}
+            staticData={staticData}
           />
         </div>
       </div>

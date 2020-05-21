@@ -44,7 +44,6 @@ const DataTile = props => {
       capitalGrowth = ((totalAssetValue - parseFloat(startingCapital)) / parseFloat(startingCapital) * 100).toFixed(3)
       relativeReturn = (parseFloat(capitalGrowth) - parseFloat(marketGrowth)).toFixed(3)
     }
-
   }
 
   let capitalGrowthData = "negative"
