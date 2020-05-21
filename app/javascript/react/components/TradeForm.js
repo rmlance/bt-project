@@ -37,14 +37,15 @@ const NewStockForm = props => {
         ["quantity"]: "must be a number"
       }
     }
-    // if (typeof(props.staticData.records[props.staticData.records.length - 1].quantity) != "undefined") {
-    //   if ((props.staticData.records[props.staticData.records.length - 1].quantity - parseInt(newFormPayload["quantity"].trim())) < 0) {
-    //     submitErrors = {
-    //       ...submitErrors,
-    //       ["quantity"]: "must less than or equal to quantity of current shares"
-    //     }
-    //   }
-    // }
+      if (!_.isEmpty(props.staticData.records)) {
+        let quantityCheck = props.staticData.records[props.staticData.records.length - 1].quantity
+        if (newFormPayload["format"] == "sell" && (quantityCheck - parseInt(newFormPayload["quantity"].trim())) < 0) {
+          submitErrors = {
+            ...submitErrors,
+            ["quantity"]: "must less than or equal to quantity of current shares"
+          }
+        }
+      }
     setErrors(submitErrors)
     return _.isEmpty(submitErrors)
   }
