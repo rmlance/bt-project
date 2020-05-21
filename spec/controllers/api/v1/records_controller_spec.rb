@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::RecordsController, type: :controller do
   let!(:user) { FactoryBot.create(:user) }
-  let!(:stock1) { Stock.create(symbol: "AAPL", starting_capital: 100, user_id: user.id) }
-  let!(:stock2) { Stock.create(symbol: "TSLA", starting_capital: 100, user_id: user.id) }
+  let!(:stock1) { Stock.create(symbol: "AAPL", starting_capital: 10000, user_id: user.id) }
+  let!(:stock2) { Stock.create(symbol: "TSLA", starting_capital: 10000, user_id: user.id) }
 
   describe "POST#create" do
     it "creates a new record" do
