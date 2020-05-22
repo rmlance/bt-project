@@ -98,7 +98,7 @@ const StocksShowContainer = props => {
         <div className="cell medium-6 chart-tile">
           <ChartTile
             data={stockData}
-            staticData={staticData}
+            title={staticData.symbol}
           />
         </div>
         <div className="cell medium-6">
