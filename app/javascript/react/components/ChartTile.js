@@ -3,7 +3,6 @@ import { Line } from 'react-chartjs-2'
 
 const ChartTile = props => {
 
-let title = props.staticData.symbol
 let priceArray = []
 let labelsArray = []
 props.data.map((newPoint) => {
@@ -11,9 +10,6 @@ props.data.map((newPoint) => {
   let newTimePoint = new Date(parseInt(newPoint.t)).toLocaleString()
   labelsArray.push(newTimePoint)
 })
-
-priceArray.shift()
-labelsArray.shift()
 
   const chartData = {
     labels: labelsArray,
@@ -31,21 +27,11 @@ labelsArray.shift()
   const chartOptions = {
     title:{
       display:true,
-      text:title,
+      text:props.title,
       fontSize:20
     },
     legend:false,
-    animation: false,
-    // scales: {
-    //   yAxes: [{
-    //     ticks: {
-    //       fontSize: 16,
-    //       maxRotation: 0,
-    //       padding: 10,
-    //       labelOffset:10
-    //     }
-    //   }]
-    // }
+    animation: false
   }
 
   return (

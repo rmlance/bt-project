@@ -9,7 +9,6 @@ export const App = (props) => {
     <BrowserRouter>
       <Switch>
         <Route exact path='/' component={StocksIndexContainer}></Route>
-        <Route exact path='/dashboard' component={StocksIndexContainer}></Route>
         <Route exact path='/stocks/new' component={NewStockContainer}></Route>
         <Route exact path='/stocks/:id' component={StocksShowContainer}></Route>
       </Switch>
