@@ -61,7 +61,6 @@ const StocksShowContainer = props => {
     socket.send(JSON.stringify({'type':'unsubscribe','symbol': symbol}))
   }
 
-
   const submitTrade = (formPayload) => {
     formPayload.p = stockData[stockData.length-1].p
     formPayload.t = stockData[stockData.length-1].t
