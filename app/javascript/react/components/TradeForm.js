@@ -42,7 +42,7 @@ const NewStockForm = props => {
         if (newFormPayload["format"] == "sell" && (quantityCheck - parseInt(newFormPayload["quantity"].trim())) < 0) {
           submitErrors = {
             ...submitErrors,
-            ["quantity"]: "must less than or equal to quantity of current shares"
+            ["quantity"]: "must be less than or equal to quantity of current shares"
           }
         }
       }
