@@ -131,6 +131,8 @@ const StocksShowContainer = props => {
         </div>
       </div>
       <div className="track-new-stock text-center">
+        <Link to={`/stocks/${fetchId}/records`}>All Trades</Link>
+        <div className="spacer"></div>
         <Link to="/">Back to Home</Link>
       </div>
     </div>

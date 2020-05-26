@@ -46,7 +46,7 @@ RSpec.describe Api::V1::StocksController, type: :controller do
       expect(response_body["stock"].length).to eq 4
 
       expect(response_body["stock"]["records"].length).to eq 2
-      expect(response_body["stock"]["records"][0].length).to eq 6
+      expect(response_body["stock"]["records"][0].length).to eq 8
 
       expect(response_body["stock"]["symbol"]).to eq "AAPL"
       expect(response_body["stock"]["starting_capital"]).to eq stock1.starting_capital.to_s
