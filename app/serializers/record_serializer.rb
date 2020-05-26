@@ -1,3 +1,3 @@
 class RecordSerializer < ActiveModel::Serializer
-  attributes :p, :t, :quantity, :transaction_value, :return_value, :capital
+  attributes :id, :p, :t, :quantity, :format, :transaction_value, :return_value, :capital
 end

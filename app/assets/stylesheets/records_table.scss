@@ -1,0 +1,36 @@
+.records-table {
+  margin: 30px 20px 20px 20px;
+  padding: 30px 30px 100px 30px;
+  background-color: white;
+}
+
+.record-headers {
+  background-color: #a3c3d9;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  border: solid 1px #043d63;
+}
+
+.record-entry {
+  background-color: gray;
+  border-bottom: solid 1px #043d63;
+  border-right: solid 1px #043d63;
+  border-left: solid 1px #043d63;
+  padding: 3px 0px 3px 0px;
+}
+
+.row-color-dark {
+  background-color: #e4edf0;
+}
+
+.row-color-light {
+  background-color: white;
+}
+
+.border {
+  border-left: solid 1px gray;
+}
+
+.back-button {
+  padding: 100px 20px 20px 20px;
+}
